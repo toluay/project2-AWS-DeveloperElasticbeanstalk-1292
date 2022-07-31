@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import {Router, Request, Response} from 'express';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 (async () => {
@@ -15,8 +16,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   app.get( "/filteredimage/", 
-  async(req, res) => {
-    const image_url = req.query.image_url;
+  async(req: Resquest, res: Response) => {
+    const image_url = req.query.image_url.toString();
       // console.log(typeof(image_url));
       if (!image_url) {
       return res.status(400).send("Url is not a valid url, try another");
@@ -32,7 +33,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async (req: Resquest, res: Response ) => {
     res.send("try GET by adding tis to endpoint /filteredimage?image_url={{}}");
   } );
 

@@ -9,14 +9,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   const app = express();
 
   // Set the network port
-  const port =  8082;
+  const port =  8080;
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   app.get( "/filteredimage/", 
-  async(req: Resquest, res: Response) => {
+  async(req: Request, res: Response) => {
     const image_url = req.query.image_url.toString();
       // console.log(typeof(image_url));
       if (!image_url) {
@@ -33,7 +33,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async (req: Resquest, res: Response ) => {
+  app.get( "/", async (req: Request, res: Response ) => {
     res.send("try GET by adding tis to endpoint /filteredimage?image_url={{}}");
   } );
 

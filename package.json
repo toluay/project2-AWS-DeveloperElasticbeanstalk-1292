@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/grutt/udacity-c2-image-filter/issues"
   },
-
   "homepage": "https://github.com/grutt/udacity-c2-image-filter#readme",
   "devDependencies": {
     "@types/bluebird": "^3.5.33",
